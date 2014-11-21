@@ -1,0 +1,18 @@
+project(ProgrammingInterviewExposed)
+cmake_minimum_required(VERSION 2.8)
+
+if(MSVC)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd\"4548; 4820; 4350; 4738; 4711; 4371\" /MP")
+	add_definitions(-D_VARIADIC_MAX=10)
+endif()
+
+if(CMAKE_SYSTEM_NAME MATCHES "Linux")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+endif()
+
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(EXPORT_HEADERS_DIRECTORY ${CMAKE_BINARY_DIR}/include)
+
+add_subdirectory(${PROJECT_SOURCE_DIR}/LinkedList)
