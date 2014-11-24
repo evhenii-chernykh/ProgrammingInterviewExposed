@@ -2,7 +2,8 @@ project(ProgrammingInterviewExposed)
 cmake_minimum_required(VERSION 2.8)
 
 if(MSVC)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd\"4548; 4820; 4350; 4738; 4711; 4371\" /MP")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP")
+	set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} /MP")
 	add_definitions(-D_VARIADIC_MAX=10)
 endif()
 
