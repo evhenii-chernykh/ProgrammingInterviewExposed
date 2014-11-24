@@ -112,7 +112,7 @@ int insertAfter(Node *node, int data)
 void printList(void)
 {
     Node *node = head;
-    putchar('[');
+    printf("List is: [");
     while (node)
     {
         if (node->next)
@@ -125,7 +125,11 @@ void printList(void)
         }
         node = node->next;
     }
-    putchar(']');
+    printf("].\n");
+    if (head)
+    {
+        printf("Head: %i\nTail: %i\n", head->data, tail->data);
+    }
 }
 
 int main(void)
@@ -144,8 +148,32 @@ int main(void)
             node = head;
         }
     }
-    printf("List is: ");
     printList();
-    printf("\n");
+    printf("Insert 99 after 3.\n");
+    insertAfter(node, 99);
+    printList();
+    printf("Insert 11 after tail\n");
+    insertAfter(tail, 11);
+    printList();
+    printf("Insert 33 before head\n");
+    insertAfter(NULL, 33);
+    printList();
+    printf("Remove 3\n");
+    deleteNode(node);
+    printList();
+    printf("Remove head\n");
+    deleteNode(head);
+    printList();
+    printf("Remove tail\n");
+    deleteNode(tail);
+    printList();
+    printf("Remove all elments from tail\n");
+    node = tail;
+    while (node)
+    {
+        deleteNode(node);
+        printList();
+        node = tail;
+    }
     return 0;
 }
