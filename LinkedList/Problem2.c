@@ -1,3 +1,13 @@
+/*
+ * PROBLEM Find and fix the bugs in the following C function that is supposed to
+ * remove the head element from a singly linked list:
+ * 
+ * void removeHead( Node *head ) {
+ *     free( head ); // Line 1
+ *     head = head->next; // Line 2
+ * }
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 
