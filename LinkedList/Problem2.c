@@ -33,10 +33,11 @@ void printList(Node *head)
         }
         else
         {
-            printf("%i]\n", head->data);
+            printf("%i", head->data);
         }
         head = head->next;
     }
+    printf("]\n");
 }
 
 int main(void)
@@ -56,6 +57,12 @@ int main(void)
         list = elem;
     }
     printList(list);
+    printf("Removing all elements from the list\n");
+    while (list)
+    {
+        removeHead(&list);
+        printList(list);
+    }
 
     return EXIT_SUCCESS;
 }
